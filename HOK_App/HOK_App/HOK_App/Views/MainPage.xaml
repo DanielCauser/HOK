@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:HOK_App.Views"
-             x:Class="HOK_App.Views.MainPage"
-             BarTextColor="White"
-             BarBackgroundColor="#3e6366"
-             Title="{Binding Title}">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:HOK_App.Views"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            x:Class="HOK_App.Views.MainPage"
+            BarTextColor="#d4d6c2"
+            BarBackgroundColor="#3e6366"
+            android:TabbedPage.ToolbarPlacement="Bottom">
     
     <NavigationPage Title="Connect"
                     BarBackgroundColor="#3e6366"
-                    BarTextColor="White">
+                    BarTextColor="#d4d6c2">
         <x:Arguments>
             <local:FeedPage />
         </x:Arguments>
@@ -17,7 +18,7 @@
     
     <NavigationPage Title="About"
                     BarBackgroundColor="#3e6366"
-                    BarTextColor="White">
+                    BarTextColor="#d4d6c2">
         <x:Arguments>
             <local:AboutPage />
         </x:Arguments>

@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:HOK_App.Views"
              x:Class="HOK_App.Views.FeedPage">
-    <ContentView.Content>
-    </ContentView.Content>
+    <StackLayout class="content">
+            <Label Text="Blogs and Podcasts" Margin="20" class="h2"/>
+            <ListView ItemsSource="{Binding RefreshCommand.EventList}"
+                      IsPullToRefreshEnabled="True"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsRefreshing="{Binding RefreshCommand.IsRefreshing}"
+                      BackgroundColor="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" TextColor="Black" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
 </local:BasePage>

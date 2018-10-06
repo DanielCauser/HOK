@@ -13,7 +13,6 @@ namespace HOK_App.ViewModels
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Main Page";
         }
     }
 }

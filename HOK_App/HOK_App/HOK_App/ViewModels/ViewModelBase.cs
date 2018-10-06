@@ -23,24 +23,21 @@ namespace HOK_App.ViewModels
             NavigationService = navigationService;
         }
 
-        public virtual void OnNavigatedFrom(NavigationParameters parameters)
-        {
-
-        }
-
-        public virtual void OnNavigatedTo(NavigationParameters parameters)
-        {
-
-        }
-
-        public virtual void OnNavigatingTo(NavigationParameters parameters)
-        {
-
-        }
-
         public virtual void Destroy()
         {
 
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
         }
     }
 }

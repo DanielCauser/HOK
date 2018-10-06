@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HOK_App\HOK_App.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{CCF620C4-A200-49D9-B30E-1DD08E0EA673}</Project>
       <Name>HOK_App</Name>
     </ProjectReference>
   </ItemGroup>

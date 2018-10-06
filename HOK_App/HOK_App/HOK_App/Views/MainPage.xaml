@@ -1,11 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HOK_App.Views"
              x:Class="HOK_App.Views.MainPage"
+             BarTextColor="White"
+             BarBackgroundColor="#3e6366"
              Title="{Binding Title}">
+    
+    <NavigationPage Title="Connect"
+                    BarBackgroundColor="#3e6366"
+                    BarTextColor="White">
+        <x:Arguments>
+            <local:FeedPage />
+        </x:Arguments>
+    </NavigationPage>
+    
+    <NavigationPage Title="About"
+                    BarBackgroundColor="#3e6366"
+                    BarTextColor="White">
+        <x:Arguments>
+            <local:AboutPage />
+        </x:Arguments>
+    </NavigationPage>
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
-
-</ContentPage>
+</TabbedPage>

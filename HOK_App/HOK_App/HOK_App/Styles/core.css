@@ -1,0 +1,54 @@
+^ContentPage {
+    background-color: white;
+    /*background-image: Background.png;*/
+    color: #33333c;
+}
+
+.h1 {
+    /*font-family: "Century Gothic", CenturyGothic, Futura, Futura-Medium, AppleGothic, sans-serif;*/
+    font-family: Futura-Medium;
+    font-weight: 900;
+    font-size: 26;
+    color: white;
+}
+
+.h2 {
+    font-family: Futura-Medium;
+    font-weight: 900;
+    font-size: 18;
+}
+
+.striped {
+    background-image: Background.png;
+}
+
+.frame {
+    margin: 20;
+    background-color: transparent;
+    border-width: 20;
+}
+
+.content {
+    background-color: #33333c;
+    color: white;
+}
+
+.border-box {
+    background-color: #33333c;
+}
+
+.social {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20 0;
+}
+
+.social-icon {
+    margin: 5;
+    height: 100;
+    width: 90;
+}
+
+/* dark pink diagonal stripe #e0288d */
+/* light pink diagonal stripe #e43f96 */
+/* mint green logo colour 7fdbb6 */

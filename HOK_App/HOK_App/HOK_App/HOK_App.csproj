@@ -9,4 +9,10 @@
     <PackageReference Include="Prism.Autofac.Forms" Version="7.1.0.279-pre" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ViewModels\AboutPageViewModel.cs" />
+  </ItemGroup>
 </Project>

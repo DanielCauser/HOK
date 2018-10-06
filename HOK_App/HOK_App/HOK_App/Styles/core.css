@@ -9,13 +9,14 @@
     font-family: Futura-Medium;
     font-weight: 900;
     font-size: 26;
-    color: white;
+    color: #d4d6c2;
 }
 
 .h2 {
     font-family: Futura-Medium;
     font-weight: 900;
     font-size: 18;
+    color: #d4d6c2;
 }
 
 .striped {
@@ -29,8 +30,7 @@
 }
 
 .content {
-    background-color: #33333c;
-    color: white;
+    background-color: white;
 }
 
 .border-box {

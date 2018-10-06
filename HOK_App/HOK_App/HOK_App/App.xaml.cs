@@ -1,10 +1,14 @@
-﻿using Prism;
+﻿using HOK_App.Commands;
+using HOK_App.Services;
+using Prism;
 using Prism.Ioc;
 using HOK_App.ViewModels;
 using HOK_App.Views;
+using MonkeyCache.SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Autofac;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HOK_App
@@ -23,7 +27,7 @@ namespace HOK_App
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
+            Barrel.ApplicationId = AppInfo.PackageName;
             await NavigationService.NavigateAsync("MainPage");
         }
 
@@ -31,6 +35,13 @@ namespace HOK_App
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<AboutPage>();
+            containerRegistry.RegisterForNavigation<FeedPage>();
+            
+            containerRegistry.RegisterSingleton<IErrorManagementService, ErrorManagementService>();
+
+            
+            containerRegistry.Register<ILoadFeedCommand, LoadFeedCommand>();
         }
     }
 }

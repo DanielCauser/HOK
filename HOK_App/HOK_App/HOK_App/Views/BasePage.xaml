@@ -4,6 +4,16 @@
              xmlns:controls="clr-namespace:HOK_App.Controls"
              x:Class="HOK_App.Views.BasePage"
              Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <OnPlatform x:TypeArguments="ToolbarItem">
+            <OnPlatform.iOS>
+                <ToolbarItem />
+            </OnPlatform.iOS>
+            <OnPlatform.Android>
+                <ToolbarItem  Order="Primary" Icon="logo80.png" Priority="1" />
+            </OnPlatform.Android>
+        </OnPlatform>
+    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <StyleSheet Source="/Styles/core.css" />
     </ContentPage.Resources>

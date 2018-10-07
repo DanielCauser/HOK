@@ -14,6 +14,8 @@ namespace HOK_App.Models
         public string Summary { get; set; }
         public string PodCastLink { get; set; }
         public string PodCastDuration { get; set; }
+        public string BackGroundImage => $"hokone.jpg";
+
         public int Id { get; set; }
 
         private string title;

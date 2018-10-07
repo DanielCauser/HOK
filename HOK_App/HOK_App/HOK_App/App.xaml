@@ -1,11 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Autofac;assembly=Prism.Autofac.Forms"
              x:Class="HOK_App.App">
-	<Application.Resources>
-
-		<!-- Application resource dictionary -->
-
+	<Application.Resources>   
+		<ResourceDictionary>
+            <OnPlatform x:Key="FABrandsFontFamily" x:TypeArguments="x:String">
+                <On Platform="Android" Value="fa-brands-400.ttf#fa-brands-400"/>
+                <On Platform="iOS" Value="Font Awesome 5 Brands"/>
+                <On Platform="UWP" Value="fa-brands-400.ttf"/>
+            </OnPlatform>
+        </ResourceDictionary>
 	</Application.Resources>
 </prism:PrismApplication>

@@ -10,73 +10,73 @@
                 x:Class="HOK_App.Views.FeedPage"
                 Title="Blogs and Podcasts">
     <StackLayout class="content">
-            <ListView ItemsSource="{Binding RefreshCommand.EventList}"
-                      IsPullToRefreshEnabled="True"
-                      RefreshCommand="{Binding RefreshCommand}"
-                      IsRefreshing="{Binding RefreshCommand.IsRefreshing}"
-                      BackgroundColor="Transparent"
-                      RowHeight="200"
-                      SeparatorVisibility="None"
-                      CachingStrategy="RecycleElement">
-                <ListView.ItemTemplate>
-                <DataTemplate>
-                <ViewCell>
-                    <Grid RowSpacing="5" ColumnSpacing="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="AUTO"/>
-                        </Grid.RowDefinitions>
-                            
-                        <ffimageloading:CachedImage Aspect="AspectFill" 
-                                                    Grid.RowSpan="2" 
-                                                    HorizontalOptions="FillAndExpand"
-                                                    VerticalOptions="FillAndExpand"
-                                                    RetryCount="3"
-                                                    RetryDelay="2000"
-                                                    IsOpaque="true"
-                                                    CacheDuration="90"
-                                                    FadeAnimationForCachedImages="true"
-                                                    FadeAnimationEnabled="true"
-                                                    ErrorPlaceholder = "hokone.jpg"
-                                                    Source="{Binding BackGroundImage}" />
-                            
-                        <controls:GradientView StartColor="White" 
-                                               EndColor="#3e6366" 
-                                               Grid.Row="0"
-                                               Grid.RowSpan="2"/>
+        <ListView ItemsSource="{Binding RefreshCommand.EventList}"
+                  IsPullToRefreshEnabled="True"
+                  RefreshCommand="{Binding RefreshCommand}"
+                  IsRefreshing="{Binding RefreshCommand.IsRefreshing}"
+                  BackgroundColor="Transparent"
+                  RowHeight="200"
+                  SeparatorVisibility="None"
+                  CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+            <ViewCell>
+                <Grid RowSpacing="5" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
                         
-                        <Grid Margin="10" RowSpacing="10" ColumnSpacing="10" Grid.Row="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="AUTO"/>
-                                <RowDefinition Height="25"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="25"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="AUTO"/>
-                            </Grid.ColumnDefinitions>
-                                
-                            <Label Text="{Binding Title}"  Grid.Row="0" Grid.ColumnSpan="3" LineBreakMode="WordWrap" class="h2" />
-                                
-                            <circleview:CircleImage Source="{Binding ImageLink}" Aspect="AspectFill" Grid.Row="1" Grid.Column="0" WidthRequest="25" HeightRequest="25" />
-                            <Label Text="{Binding Handle}" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" />
+                    <ffimageloading:CachedImage Aspect="AspectFill" 
+                                                Grid.RowSpan="2" 
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="FillAndExpand"
+                                                RetryCount="3"
+                                                RetryDelay="2000"
+                                                IsOpaque="true"
+                                                CacheDuration="90"
+                                                FadeAnimationForCachedImages="true"
+                                                FadeAnimationEnabled="true"
+                                                ErrorPlaceholder = "hokone.jpg"
+                                                Source="{Binding BackGroundImage}" />
+                        
+                    <controls:GradientView StartColor="White" 
+                                           EndColor="#3e6366" 
+                                           Grid.Row="0"
+                                           Grid.RowSpan="2"/>
+                    
+                    <Grid Margin="10" RowSpacing="10" ColumnSpacing="10" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="25"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="AUTO"/>
+                        </Grid.ColumnDefinitions>
+                            
+                        <Label Text="{Binding Title}"  Grid.Row="0" Grid.ColumnSpan="3" LineBreakMode="WordWrap" class="h2" />
+                            
+                        <circleview:CircleImage Source="{Binding ImageLink}" Aspect="AspectFill" Grid.Row="1" Grid.Column="0" WidthRequest="25" HeightRequest="25" />
+                        <Label Text="{Binding Handle}" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" />
 
-                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Spacing="5">
-                                <Label Text="{Binding PublishDateFormated, StringFormat='{0:MMMM d, yyyy}'}" />
-                            </StackLayout>
-                        </Grid>
+                        <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Spacing="5">
+                            <Label Text="{Binding PublishDateFormated, StringFormat='{0:MMMM d, yyyy}'}" />
+                        </StackLayout>
                     </Grid>
-                    <ViewCell.Effects>
-                        <effects:ViewShadowEffect Radius="5" DistanceX="5" DistanceY="5" Color="Red" />
-                    </ViewCell.Effects>
-                </ViewCell>
-            </DataTemplate>
-            </ListView.ItemTemplate>
-            <ListView.Behaviors>
-                    <behaviors:EventToCommandBehavior EventName="ItemTapped"
-                                                      Command="{Binding NavigateToWebUrlCommand}"
-                                                      EventArgsParameterPath="Item" />
-            </ListView.Behaviors>
-            </ListView>
-        </StackLayout>
+                </Grid>
+                <ViewCell.Effects>
+                    <effects:ViewShadowEffect Radius="5" DistanceX="5" DistanceY="5" Color="Red" />
+                </ViewCell.Effects>
+            </ViewCell>
+        </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Behaviors>
+                <behaviors:EventToCommandBehavior EventName="ItemTapped"
+                                                  Command="{Binding NavigateToWebUrlCommand}"
+                                                  EventArgsParameterPath="Item"/>
+        </ListView.Behaviors>
+        </ListView>
+    </StackLayout>
 </local:BasePage>

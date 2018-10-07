@@ -15,6 +15,7 @@
     <PackageReference Include="SkiaSharp" Version="1.60.3" />
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.60.3" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
+    <PackageReference Include="Xam.Plugin.Iconize" Version="3.2.0.75" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,8 +23,13 @@
     <Folder Include="Behaviors\" />
     <Folder Include="Controls\" />
     <Folder Include="Effects\" />
+    <Folder Include="Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Annotations.cs" />
+    <Compile Remove="Templates\ContentPresenterTemplate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Templates\ContentPresenterTemplate.xaml" />
   </ItemGroup>
 </Project>

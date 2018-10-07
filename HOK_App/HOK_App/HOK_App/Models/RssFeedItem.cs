@@ -7,6 +7,7 @@ namespace HOK_App.Models
     {
         public string Description { get; set; }
         public string Link { get; set; }
+        public DateTime PublishDateFormated => DateTime.TryParse(PublishDate, out DateTime result) ? result : DateTime.MinValue;
         public string PublishDate { get; set; }
         public string Author { get; set; }
         public string AuthorEmail { get; set; }
@@ -14,7 +15,28 @@ namespace HOK_App.Models
         public string Summary { get; set; }
         public string PodCastLink { get; set; }
         public string PodCastDuration { get; set; }
-        public string BackGroundImage => $"hokone.jpg";
+
+        private string backGroundImage;
+        public string BackGroundImage
+        {
+            get
+            {
+                return backGroundImage;
+            }
+            set
+            {
+                try
+                {
+                    backGroundImage = value;
+                    var resulting = backGroundImage.Split(new string[] { "www.haleokaula.org" }, StringSplitOptions.RemoveEmptyEntries);
+                    backGroundImage = $"http://www.haleokaula.org/{resulting[1].Split('"')[0]}";
+                }
+                catch (Exception)
+                {
+                    backGroundImage = value;
+                }
+            }
+        }
 
         public int Id { get; set; }
 

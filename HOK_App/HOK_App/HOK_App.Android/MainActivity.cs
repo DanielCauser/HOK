@@ -19,6 +19,8 @@ namespace HOK_App.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             ImageCircleRenderer.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+
             LoadApplication(new App(new AndroidInitializer()));
         }
     }

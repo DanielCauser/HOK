@@ -4,6 +4,10 @@
     color: #33333c;
 }
 
+^Label {
+    color: #d4d6c2;
+}
+
 .h1 {
     /*font-family: "Century Gothic", CenturyGothic, Futura, Futura-Medium, AppleGothic, sans-serif;*/
     font-family: Futura-Medium;

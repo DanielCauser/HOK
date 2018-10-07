@@ -1,6 +1,10 @@
+using System;
 using System.Windows.Input;
 using HOK_App.Commands;
+using HOK_App.Models;
+using Prism.Commands;
 using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace HOK_App.ViewModels
 {
@@ -14,7 +18,6 @@ namespace HOK_App.ViewModels
         public FeedPageViewModel(INavigationService navigationService, ILoadFeedCommand loadEventsCommand)
             : base(navigationService)
         {
-            Title = "Meetings";
             _loadEventsCommand = loadEventsCommand;
         }
 
@@ -23,7 +26,7 @@ namespace HOK_App.ViewModels
             _loadEventsCommand.Execute(null);
         }
 
-        //public override ICommand NavigateToWebUrlCommand => new DelegateCommand<RssFeedItem>(item => Device.OpenUri(new Uri(item.Link)));
+        public override ICommand NavigateToWebUrlCommand => new DelegateCommand<RssFeedItem>(item => Device.OpenUri(new Uri(item.Link)));
 
     }
 }

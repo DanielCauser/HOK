@@ -4,6 +4,8 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace HOK_App.ViewModels
 {
@@ -38,5 +40,8 @@ namespace HOK_App.ViewModels
         public virtual void OnNavigatingTo(INavigationParameters parameters)
         {
         }
+
+        public virtual ICommand NavigateToWebUrlCommand => new DelegateCommand<string>(url => Device.OpenUri(new Uri(url)));
+
     }
 }

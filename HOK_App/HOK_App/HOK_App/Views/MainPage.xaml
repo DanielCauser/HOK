@@ -8,7 +8,7 @@
             BarBackgroundColor="#3e6366"
             android:TabbedPage.ToolbarPlacement="Bottom">
     
-    <NavigationPage Title="Connect"
+    <NavigationPage Title="Feed"
                     BarBackgroundColor="#3e6366"
                     BarTextColor="#d4d6c2">
         <x:Arguments>

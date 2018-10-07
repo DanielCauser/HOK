@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:HOK_App.Controls"
              x:Class="HOK_App.Views.BasePage"
              Title="{Binding Title}">
     <ContentPage.Resources>

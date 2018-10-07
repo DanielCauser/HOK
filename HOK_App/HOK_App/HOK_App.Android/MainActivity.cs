@@ -18,10 +18,17 @@ namespace HOK_App.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            ImageCircleRenderer.Init();
-            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+
+            InitDependencies();
 
             LoadApplication(new App(new AndroidInitializer()));
+        }
+
+        private void InitDependencies()
+        {
+            ImageCircleRenderer.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            Plugin.Iconize.Iconize.Init(Resource.Id.toolbar, Resource.Id.sliding_tabs);
         }
     }
 

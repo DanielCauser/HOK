@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
+using Plugin.Iconize;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -23,12 +24,19 @@ namespace HOK_App.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            ImageCircleRenderer.Init();
-            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+
+            InitDependencies();
 
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void InitDependencies()
+        {
+            ImageCircleRenderer.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            var bb = new IconImageRenderer();
         }
     }
 

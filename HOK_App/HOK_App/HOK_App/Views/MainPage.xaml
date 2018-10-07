@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<controls:IconBottomTabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:HOK_App.Views"
+            xmlns:controls="clr-namespace:HOK_App.Controls"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:fonts="clr-namespace:HOK_App.Fonts"
             x:Class="HOK_App.Views.MainPage"
             BarTextColor="#d4d6c2"
             BarBackgroundColor="#3e6366"
             android:TabbedPage.ToolbarPlacement="Bottom">
     
     <NavigationPage Title="Feed"
+                    Icon="{x:Static fonts:FontAwesomeRegular.FeedKey}"
                     BarBackgroundColor="#3e6366"
                     BarTextColor="#d4d6c2">
         <x:Arguments>
@@ -17,11 +20,11 @@
     </NavigationPage>
     
     <NavigationPage Title="About"
+                    Icon="{x:Static fonts:FontAwesomeRegular.AboutKey}"
                     BarBackgroundColor="#3e6366"
                     BarTextColor="#d4d6c2">
         <x:Arguments>
             <local:AboutPage />
         </x:Arguments>
     </NavigationPage>
-
-</TabbedPage>
+</controls:IconBottomTabbedPage>

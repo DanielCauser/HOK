@@ -63,7 +63,7 @@ namespace HOK_App.Commands
                 }
 
                 if (events != null && events.Any())
-                    EventList.ReplaceRange(events);
+                    EventList.ReplaceRange(events.OrderByDescending(x => x.PublishDateFormated));
             }
             finally
             {
@@ -85,6 +85,7 @@ namespace HOK_App.Commands
                     {
                         Title = (string)item.Element("title"),
                         Description = (string)item.Element("description"),
+                        BackGroundImage = (string)item.Element("description"),
                         Link = (string)item.Element("guid"),
                         PublishDate = (string)item.Element("pubDate"),
                         Id = id++
@@ -99,20 +100,8 @@ namespace HOK_App.Commands
                     }
 
                     result.Add(feed);
-                    //(string)el.Attribute(aw + "Type") == "Billing"
                 }
                 return result;
-                //    return (from item in xdoc.Descendants("item")
-                //        select new RssFeedItem
-                //        {
-                //            Title = (string) item.Element("title"),
-                //            Description = (string) item.Element("description"),
-                //            Link = (string) item.Element("guid"),
-                //            PublishDate = (string) item.Element("pubDate"),
-                //            AuthorEmail = (string) item.Element("author"),
-                //            ImageLink = (string)item.Element("image"),
-                //            Id = id++
-                //        }).ToList();
             });
         }
     }

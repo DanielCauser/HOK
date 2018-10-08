@@ -35,7 +35,8 @@ namespace HOK_App
         public override void Initialize()
         {
             base.Initialize();
-            Iconize.With(new FontAwesomeProIconModule());
+            Iconize.With(new FontAwesomeProIconModule())
+                   .With(new  FontAwesomeBrandsIconModule());
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

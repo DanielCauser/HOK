@@ -9,6 +9,7 @@
                 xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
                 x:Class="HOK_App.Views.FeedPage"
                 Title="Blogs and Podcasts">
+    
     <StackLayout class="content">
         <ListView ItemsSource="{Binding RefreshCommand.EventList}"
                   IsPullToRefreshEnabled="True"

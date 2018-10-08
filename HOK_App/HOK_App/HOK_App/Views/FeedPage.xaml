@@ -25,7 +25,7 @@
                 <Grid RowSpacing="5" ColumnSpacing="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                         
                     <ffimageloading:CachedImage Aspect="AspectFill" 

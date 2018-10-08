@@ -70,7 +70,7 @@ namespace HOK_App.Droid.Renderers
                     if (icon == null)
                         continue;
 
-                    var drawable = new IconDrawable(Context, icon).Color(Color.White.ToAndroid()).SizeDp(20);
+                    var drawable = new IconDrawable(Context, icon).Color(Color.FromHex("#d4d6c2").ToAndroid()).SizeDp(20);
 
                     menuItem.SetIcon(drawable);
                 }

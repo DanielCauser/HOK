@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HOK_App.Controls.SocialIcon"
+             class="social-icon">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelIconStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource FABrandsFontFamily}"/>
+                <Setter Property="FontSize" Value="40"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapped"/>
+            </Grid.GestureRecognizers>
+            
+            <Label Text="{Binding Icon}" Style="{StaticResource LabelIconStyle}" />
+            
+            <Label Grid.Row="1" Text="{Binding LabelText}"
+                   HorizontalTextAlignment="Center" 
+                   HorizontalOptions="CenterAndExpand"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

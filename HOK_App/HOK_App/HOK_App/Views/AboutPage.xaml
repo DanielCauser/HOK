@@ -8,9 +8,19 @@
                 x:Class="HOK_App.Views.AboutPage"
                 Title="About us">
     <ScrollView>
-        <StackLayout Margin="20"
-                     class="content">
-            <Image HeightRequest="200"
+        <Grid  Margin="20"
+               class="content">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Image Grid.Row="0"
                    HorizontalOptions="FillAndExpand" 
                    Source="hokone.jpg">
                 <Image.Effects>
@@ -18,25 +28,28 @@
                 </Image.Effects>
             </Image>
             
-            <Label Text="Hale O Nā Kāula church" 
+            <Label Grid.Row="1"
+                   Text="Hale O Nā Kāula church" 
                    class="h1"
                    HorizontalTextAlignment="Center"
                    LineBreakMode="WordWrap"
-                   FontAttributes="Bold"/>
+                   FontAttributes="Bold" />
             
-            <Label Text="Located in the beautiful Kula area of Upcountry Maui, has been part of the Maui community for more than fifty years. We are a close-knit Christian community centered in our Savior Jesus Christ. We believe that the Bible is the Word of God, and it is our desire to live a lifestyle of faith based on its teachings." 
-                   class="h2" 
-                   LineBreakMode="WordWrap"
+            <Label Grid.Row="2"
+                   Text="Located in the beautiful Kula area of Upcountry Maui, has been part of the Maui community for more than fifty years. We are a close-knit Christian community centered in our Savior Jesus Christ. We believe that the Bible is the Word of God, and it is our desire to live a lifestyle of faith based on its teachings." 
+                   class="h2"
                    HorizontalTextAlignment="Center"
-                   VerticalOptions="Center" 
-                   HorizontalOptions="Center"/>
+                   VerticalTextAlignment="Start"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   LineBreakMode="WordWrap" />
             
-            <FlexLayout class="social">
+            <FlexLayout class="social"
+                        Grid.Row="3">
                 <controls:SocialIcon Icon="{x:Static fonts:FontAwesomeBrands.Instagram}" LabelText="Instagram" Url="https://www.instagram.com/mauichurch/"/>
                 <controls:SocialIcon Icon="{x:Static fonts:FontAwesomeBrands.Twitter}" LabelText="Twitter" Url="https://twitter.com/HaleOKaula"/>
                 <controls:SocialIcon Icon="{x:Static fonts:FontAwesomeBrands.Facebook}" LabelText="Facebook" Url="https://www.facebook.com/HaleOKaula"/>
-<!--                <controls:SocialIcon Icon="{x:Static fonts:FontAwesomeRegular.Email}" LabelText="Email" Url="https://us2.list-manage.com/subscribe?u=351d0245a613878b41f3856ed&amp;id=5d513e3723" />-->
             </FlexLayout>
-        </StackLayout>
+       </Grid>
     </ScrollView>
 </local:BasePage>

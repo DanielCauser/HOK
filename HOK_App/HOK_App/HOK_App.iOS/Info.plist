@@ -23,13 +23,11 @@
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>HOK</string>
+	<string>Maui Church</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.causerexception.hok</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>CFBundleName</key>
-	<string>HOK</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
@@ -41,5 +39,7 @@
 		<string>Fonts/fa-brands-400.ttf</string>
 		<string>Fonts/fa-regular-400.ttf</string>
 	</array>
+	<key>CFBundleName</key>
+	<string>Maui Church</string>
 </dict>
 </plist>

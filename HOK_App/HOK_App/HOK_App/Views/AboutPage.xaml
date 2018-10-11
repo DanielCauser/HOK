@@ -8,7 +8,7 @@
                 x:Class="HOK_App.Views.AboutPage"
                 Title="About us">
     <ScrollView>
-        <StackLayout Margin="10">
+        <StackLayout Margin="20">
             <Image HorizontalOptions="FillAndExpand" 
                    Source="hokone.jpg">
                 <Image.Effects>

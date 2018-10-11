@@ -8,35 +8,21 @@
                 x:Class="HOK_App.Views.AboutPage"
                 Title="About us">
     <ScrollView>
-        <Grid  Margin="20"
-               class="content">
-            <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <Image Grid.Row="0"
-                   HorizontalOptions="FillAndExpand" 
+        <StackLayout Margin="10">
+            <Image HorizontalOptions="FillAndExpand" 
                    Source="hokone.jpg">
                 <Image.Effects>
                     <effects:ViewShadowEffect Radius="10" DistanceX="10" DistanceY="10" Color="Gray" />
                 </Image.Effects>
             </Image>
             
-            <Label Grid.Row="1"
-                   Text="Hale O Nā Kāula church" 
+            <Label Text="Hale O Nā Kāula church" 
                    class="h1"
                    HorizontalTextAlignment="Center"
                    LineBreakMode="WordWrap"
                    FontAttributes="Bold" />
             
-            <Label Grid.Row="2"
-                   Text="Located in the beautiful Kula area of Upcountry Maui, has been part of the Maui community for more than fifty years. We are a close-knit Christian community centered in our Savior Jesus Christ. We believe that the Bible is the Word of God, and it is our desire to live a lifestyle of faith based on its teachings." 
+            <Label Text="Located in the beautiful Kula area of Upcountry Maui, has been part of the Maui community for more than fifty years. We are a close-knit Christian community centered in our Savior Jesus Christ. We believe that the Bible is the Word of God, and it is our desire to live a lifestyle of faith based on its teachings." 
                    class="h2"
                    HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Start"
@@ -44,12 +30,11 @@
                    VerticalOptions="FillAndExpand"
                    LineBreakMode="WordWrap" />
             
-            <FlexLayout class="social"
-                        Grid.Row="3">
+            <FlexLayout class="social">
                 <controls:SocialIcon Icon="{x:Static fonts:FontAwesomeBrands.Instagram}" LabelText="Instagram" Url="https://www.instagram.com/mauichurch/"/>
                 <controls:SocialIcon Icon="{x:Static fonts:FontAwesomeBrands.Twitter}" LabelText="Twitter" Url="https://twitter.com/HaleOKaula"/>
                 <controls:SocialIcon Icon="{x:Static fonts:FontAwesomeBrands.Facebook}" LabelText="Facebook" Url="https://www.facebook.com/HaleOKaula"/>
             </FlexLayout>
-       </Grid>
+        </StackLayout>
     </ScrollView>
 </local:BasePage>

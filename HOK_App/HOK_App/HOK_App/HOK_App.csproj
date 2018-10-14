@@ -16,7 +16,7 @@
     <PackageReference Include="SkiaSharp.Views.Forms" Version="1.60.3" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
     <PackageReference Include="Xam.Plugin.Iconize" Version="3.2.0.75" />
-    <PackageReference Include="Plugin.Notifications" Version="4.0.2" />
+    <PackageReference Include="Plugin.Notifications" Version="5.0.0-beta3" />
     <PackageReference Include="Plugin.Jobs" Version="1.1.1" />
   </ItemGroup>
 

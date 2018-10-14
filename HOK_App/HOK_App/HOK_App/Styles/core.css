@@ -1,11 +1,14 @@
 ^ContentPage {
     background-color: white;
-    /*background-image: Background.png;*/
     color: #33333c;
 }
 
 ^Label {
-    color: #d4d6c2;
+    color: #898c6d;
+}
+
+.label-clear {
+    color: #898c6d;
 }
 
 .h1 {

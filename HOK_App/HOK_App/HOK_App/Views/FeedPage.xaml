@@ -57,13 +57,13 @@
                             <ColumnDefinition Width="AUTO"/>
                         </Grid.ColumnDefinitions>
                             
-                        <Label Text="{Binding Title}"  Grid.Row="0" Grid.ColumnSpan="3" LineBreakMode="WordWrap" class="h2" />
+                        <Label class="label-clear" Text="{Binding Title}"  Grid.Row="0" Grid.ColumnSpan="3" LineBreakMode="WordWrap" class="h2" />
                             
                         <circleview:CircleImage Source="{Binding ImageLink}" Aspect="AspectFill" Grid.Row="1" Grid.Column="0" WidthRequest="25" HeightRequest="25" />
-                        <Label Text="{Binding Handle}" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" />
+                        <Label class="label-clear" Text="{Binding Handle}" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" />
 
-                        <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Spacing="5">
-                            <Label Text="{Binding PublishDateFormated, StringFormat='{0:MMMM d, yyyy}'}" />
+                        <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Spacing="5" >
+                            <Label Text="{Binding PublishDateFormated, StringFormat='{0:MMMM d, yyyy}'}" class="label-clear"/>
                         </StackLayout>
                     </Grid>
                 </Grid>

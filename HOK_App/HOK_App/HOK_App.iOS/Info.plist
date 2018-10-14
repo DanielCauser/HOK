@@ -42,8 +42,21 @@
 	<key>CFBundleName</key>
 	<string>Maui Church</string>
 	<key>UIBackgroundModes</key>
-	<array>	
+	<array>
 		<string>fetch</string>
-	</array>	
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>www.haleokaula.org</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 </dict>
 </plist>

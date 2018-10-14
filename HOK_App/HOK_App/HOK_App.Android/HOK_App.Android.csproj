@@ -65,7 +65,7 @@
       <Version>3.0.0.5</Version>
     </PackageReference>
     <PackageReference Include="Plugin.Notifications">
-      <Version>4.0.2</Version>
+      <Version>5.0.0-beta3</Version>
     </PackageReference>
     <PackageReference Include="Plugin.Jobs">
       <Version>1.1.1</Version>

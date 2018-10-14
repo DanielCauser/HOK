@@ -1,10 +1,20 @@
 ^ContentPage {
     background-color: white;
-    /*background-image: Background.png;*/
     color: #33333c;
 }
 
 ^Label {
+    color: #898c6d;
+}
+
+.label-clear {
+    color: #d4d6c2;
+}
+
+.h2-clear {
+    font-family: Futura-Medium;
+    font-weight: 900;
+    font-size: 18;
     color: #d4d6c2;
 }
 

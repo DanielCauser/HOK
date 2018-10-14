@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Plugin.Notifications;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using System;
@@ -33,8 +34,9 @@ namespace HOK_App.ViewModels
         {
         }
 
-        public virtual void OnNavigatedTo(INavigationParameters parameters)
+        public async virtual void OnNavigatedTo(INavigationParameters parameters)
         {
+            await CrossNotifications.Current.RequestPermission();
         }
 
         public virtual void OnNavigatingTo(INavigationParameters parameters)

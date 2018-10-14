@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using System;
+using Foundation;
 using ImageCircle.Forms.Plugin.iOS;
 using Plugin.Iconize;
 using Prism;
@@ -27,6 +28,7 @@ namespace HOK_App.iOS
 
             InitDependencies();
 
+
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
@@ -37,6 +39,12 @@ namespace HOK_App.iOS
             ImageCircleRenderer.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             var bb = new IconImageRenderer();
+            Plugin.Jobs.CrossJobs.Init();
+        }
+
+        public override void PerformFetch(UIApplication application, Action<UIBackgroundFetchResult> completionHandler)
+        {
+            Plugin.Jobs.CrossJobs.OnBackgroundFetch(completionHandler);
         }
     }
 

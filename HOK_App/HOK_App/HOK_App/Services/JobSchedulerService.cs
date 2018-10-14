@@ -16,7 +16,6 @@ namespace HOK_App.Services
             CrossJobs.Current.Schedule(job);
 
             CrossJobs.Current.Run(nameof(DailyBibleVerseJob));
-
         }
     }
 }

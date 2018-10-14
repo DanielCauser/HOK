@@ -15,6 +15,7 @@ namespace HOK_App.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo;
 
             base.OnCreate(bundle);
 
@@ -22,7 +23,7 @@ namespace HOK_App.Droid
 
             InitDependencies();
             Plugin.Jobs.CrossJobs.Init(this, bundle); // activity
-            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo80;
+
 
             LoadApplication(new App(new AndroidInitializer()));
         }

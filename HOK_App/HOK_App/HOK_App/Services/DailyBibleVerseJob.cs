@@ -17,9 +17,10 @@ namespace HOK_App.Services
             for (int i = 0; i < 3; i++)
             {
                 CrossLocalNotifications.Current.Show(
-                    "Daily bible verse", 
+                    "Daily bible verse",
                     $"This is a bible verse {i}",
-                    i, 
+                    i,
+                    //DateTime.Now.AddSeconds(10 * i));
                     TimeLeft(i));
             }
         }

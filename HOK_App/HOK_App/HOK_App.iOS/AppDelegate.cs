@@ -5,7 +5,7 @@ using Plugin.Iconize;
 using Prism;
 using Prism.Ioc;
 using UIKit;
-
+using UserNotifications;
 
 namespace HOK_App.iOS
 {

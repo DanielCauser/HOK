@@ -18,7 +18,7 @@ namespace HOK_App.Services
 
             // get the next 30 bible verses based on date
             //schedule a month
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 3; i++)
             {
                 var nt = new Notification
                 {

@@ -2,6 +2,7 @@
 using Android.Content.PM;
 using Android.OS;
 using ImageCircle.Forms.Plugin.Droid;
+using Plugin.LocalNotifications;
 using Prism;
 using Prism.Ioc;
 
@@ -14,12 +15,15 @@ namespace HOK_App.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo;
 
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             InitDependencies();
+            Plugin.Jobs.CrossJobs.Init(this, bundle); // activity
+
 
             LoadApplication(new App(new AndroidInitializer()));
         }

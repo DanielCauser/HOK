@@ -27,7 +27,7 @@ namespace HOK_App.iOS
             global::Xamarin.Forms.Forms.Init();
 
             InitDependencies();
-            Plugin.Jobs.CrossJobs.Init();
+
 
             LoadApplication(new App(new iOSInitializer()));
 
@@ -39,6 +39,7 @@ namespace HOK_App.iOS
             ImageCircleRenderer.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             var bb = new IconImageRenderer();
+            Plugin.Jobs.CrossJobs.Init();
         }
 
         public override void PerformFetch(UIApplication application, Action<UIBackgroundFetchResult> completionHandler)

@@ -48,22 +48,22 @@
                     
                     <Grid Margin="10" RowSpacing="10" ColumnSpacing="10" Grid.Row="1">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="25"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="25"/>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="AUTO"/>
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                             
-                        <Label class="label-clear" Text="{Binding Title}"  Grid.Row="0" Grid.ColumnSpan="3" LineBreakMode="WordWrap" class="h2" />
+                        <Label class="h2-clear" Text="{Binding Title}"  Grid.Row="0" Grid.ColumnSpan="3" LineBreakMode="WordWrap"/>
                             
                         <circleview:CircleImage Source="{Binding ImageLink}" Aspect="AspectFill" Grid.Row="1" Grid.Column="0" WidthRequest="25" HeightRequest="25" />
                         <Label class="label-clear" Text="{Binding Handle}" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" />
 
                         <StackLayout Orientation="Horizontal"  VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Spacing="5" >
-                            <Label Text="{Binding PublishDateFormated, StringFormat='{0:MMMM d, yyyy}'}" class="label-clear"/>
+                            <Label class="label-clear" Text="{Binding PublishDateFormated, StringFormat='{0:MMMM d, yyyy}'}" />
                         </StackLayout>
                     </Grid>
                 </Grid>

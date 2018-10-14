@@ -29,6 +29,7 @@ namespace HOK_App
         {
             InitializeComponent();
             Barrel.ApplicationId = AppInfo.PackageName;
+            JobSchedulerService.ScheduleJobs();
             await NavigationService.NavigateAsync("MainPage");
         }
 

@@ -8,7 +8,14 @@
 }
 
 .label-clear {
-    color: #898c6d;
+    color: #d4d6c2;
+}
+
+.h2-clear {
+    font-family: Futura-Medium;
+    font-weight: 900;
+    font-size: 18;
+    color: #d4d6c2;
 }
 
 .h1 {

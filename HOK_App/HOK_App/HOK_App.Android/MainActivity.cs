@@ -20,6 +20,7 @@ namespace HOK_App.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             InitDependencies();
+            Plugin.Jobs.CrossJobs.Init(this, bundle); // activity
 
             LoadApplication(new App(new AndroidInitializer()));
         }

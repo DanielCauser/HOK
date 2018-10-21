@@ -18,7 +18,7 @@ namespace HOK_App.Commands
         public async Task LoadEventsFeed()
         {
             var list = await _bibleVersesDataService.GetBibleVerses();
-            //Task.Run(() => { JobSchedulerService.ScheduleJobs(list); });
+            Task.Run(() => { JobSchedulerService.ScheduleJobs(list); });
         }
     }
 }

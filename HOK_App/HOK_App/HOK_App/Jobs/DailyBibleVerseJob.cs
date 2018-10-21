@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using HOK_App.Models;
 using Plugin.Jobs;
 using Plugin.LocalNotifications;
 
@@ -20,19 +22,26 @@ namespace HOK_App.Services
         public Task Run(JobInfo jobInfo, CancellationToken cancelToken)
         {
             Console.WriteLine("Entering background job!");
-            //var loops = jobInfo.GetValue("LoopCount", 25);
-
-            // get the next 30 bible verses based on date
-            //schedule a month
-            for (int i = 0; i < 3; i++)
+            try
             {
-                CrossLocalNotifications.Current.Show(
-                    "Daily bible verse",
-                    $"This is a bible verse {i}",
-                    i,
-                    //DateTime.Now.AddSeconds(10 * i));
-                    TimeLeft(i));
+                var list = jobInfo.GetValue<List<string>>("BibleVerseList");
+                //for (int i = 0; i < list.Count; i++)
+                //{
+                //    var feast = list[i].Feast != nameof(FeastEnum.None) ? list[i].Feast : string.Empty;
+                //    CrossLocalNotifications.Current.Show(
+                //        $"Daily bible verse {feast}".Trim(),
+                //        $"{list[i].Verse}",
+                //        i,
+                //        //DateTime.Now.AddSeconds(10 * i));
+                //        TimeLeft(i));
+                //}
             }
+            catch (Exception ex)
+            {
+
+            }
+
+
 
             return Task.FromResult(0);
         }

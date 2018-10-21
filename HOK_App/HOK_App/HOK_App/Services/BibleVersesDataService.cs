@@ -10,54 +10,40 @@ namespace HOK_App.Services
     public class BibleVersesDataService : IBibleVersesDataService
     {
         private readonly IFileService _fileService;
+        private SQLiteAsyncConnection _conn => new SQLiteAsyncConnection(EnsureDatabaseFile());
 
         public BibleVersesDataService(IFileService fileService)
         {
             _fileService = fileService;
-            //_conn = new SQLiteAsyncConnection(Constants.DataBaseCompletePath);
         }
-        //private readonly SQLiteAsyncConnection _conn;
 
-
-        //public BibleVersesDataService(/**/)
-        //{
-
-
-        //    //_conn = new SQLiteAsyncConnection(EnsureDatabaseFile());
-
-        //}
-
-        //public async Task<IList<BibleVerse>> GetBibleVerses()
-        //{
-        //    var list = await _conn.QueryAsync<BibleVerse>($"select * from {nameof(BibleVerse)} LIMIT 30");
-        //    return list;
-        //}
-
-        //private string EnsureDatabaseFile()
-        //{
-        //    if (!File.Exists(Constants.DataBasePath))
-        //    {
-        //        if (_fileService.AssetExists(Constants.DataBaseName))
-        //        {
-        //            try
-        //            {
-        //                _fileService.MoveAsset(Constants.DataBaseName, Constants.DataBaseCompletePath);
-        //            }
-        //            catch
-        //            {
-        //                File.Create(Constants.DataBaseCompletePath).Dispose();
-        //            }
-        //        }
-        //        else
-        //        {
-        //            File.Create(Constants.DataBaseCompletePath).Dispose();
-        //        }
-        //    }
-        //    return Constants.DataBaseCompletePath;
-        //}
-        public Task<IList<BibleVerse>> GetBibleVerses()
+        public async Task<IList<BibleVerse>> GetBibleVerses()
         {
-            throw new NotImplementedException();
+            var list = await _conn.QueryAsync<BibleVerse>($"select * from {nameof(BibleVerse)} LIMIT 30");
+            return list;
+        }
+
+        private string EnsureDatabaseFile()
+        {
+            if (!File.Exists(Constants.DataBaseCompletePath))
+            {
+                if (_fileService.AssetExists(Constants.DataBaseName))
+                {
+                    try
+                    {
+                        _fileService.MoveAsset(Constants.DataBaseName, Constants.DataBaseCompletePath);
+                    }
+                    catch
+                    {
+                        File.Create(Constants.DataBaseCompletePath).Dispose();
+                    }
+                }
+                else
+                {
+                    File.Create(Constants.DataBaseCompletePath).Dispose();
+                }
+            }
+            return Constants.DataBaseCompletePath;
         }
     }
 }

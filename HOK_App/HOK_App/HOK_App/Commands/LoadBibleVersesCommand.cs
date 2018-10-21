@@ -11,7 +11,7 @@ namespace HOK_App.Commands
         public LoadBibleVersesCommand(IErrorManagementService errorManagementService,
                                      IBibleVersesDataService bibleVersesDataService) : base(errorManagementService)
         {
-            //_bibleVersesDataService = bibleVersesDataService;
+            _bibleVersesDataService = bibleVersesDataService;
             ExecuteMethodAsync = LoadEventsFeed;
         }
 

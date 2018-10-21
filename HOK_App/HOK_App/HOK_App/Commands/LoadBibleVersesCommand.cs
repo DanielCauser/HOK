@@ -8,8 +8,8 @@ namespace HOK_App.Commands
     {
         private readonly IBibleVersesDataService _bibleVersesDataService;
 
-        public LoadBibleVersesCommand(IErrorManagementService errorManagementService/*,
-                                     IBibleVersesDataService bibleVersesDataService*/) : base(errorManagementService)
+        public LoadBibleVersesCommand(IErrorManagementService errorManagementService,
+                                     IBibleVersesDataService bibleVersesDataService) : base(errorManagementService)
         {
             //_bibleVersesDataService = bibleVersesDataService;
             ExecuteMethodAsync = LoadEventsFeed;

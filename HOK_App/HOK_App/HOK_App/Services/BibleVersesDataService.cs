@@ -9,22 +9,29 @@ namespace HOK_App.Services
 {
     public class BibleVersesDataService : IBibleVersesDataService
     {
-        private readonly SQLiteAsyncConnection _conn;
-        //private readonly IFileService _fileService;
+        private readonly IFileService _fileService;
 
-        public BibleVersesDataService(/*IFileService fileService*/)
+        public BibleVersesDataService(IFileService fileService)
         {
-            //_fileService = fileService;
-
-            //_conn = new SQLiteAsyncConnection(EnsureDatabaseFile());
-            _conn = new SQLiteAsyncConnection(Constants.DataBaseCompletePath);
+            _fileService = fileService;
+            //_conn = new SQLiteAsyncConnection(Constants.DataBaseCompletePath);
         }
+        //private readonly SQLiteAsyncConnection _conn;
 
-        public async Task<IList<BibleVerse>> GetBibleVerses()
-        {
-            var list = await _conn.QueryAsync<BibleVerse>($"select * from {nameof(BibleVerse)} LIMIT 30");
-            return list;
-        }
+
+        //public BibleVersesDataService(/**/)
+        //{
+
+
+        //    //_conn = new SQLiteAsyncConnection(EnsureDatabaseFile());
+
+        //}
+
+        //public async Task<IList<BibleVerse>> GetBibleVerses()
+        //{
+        //    var list = await _conn.QueryAsync<BibleVerse>($"select * from {nameof(BibleVerse)} LIMIT 30");
+        //    return list;
+        //}
 
         //private string EnsureDatabaseFile()
         //{
@@ -48,5 +55,9 @@ namespace HOK_App.Services
         //    }
         //    return Constants.DataBaseCompletePath;
         //}
+        public Task<IList<BibleVerse>> GetBibleVerses()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

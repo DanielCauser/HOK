@@ -55,7 +55,7 @@ namespace HOK_App
             containerRegistry.Register<ILoadBibleVersesCommand, LoadBibleVersesCommand>();
 
             containerRegistry.RegisterSingleton<IErrorManagementService, ErrorManagementService>();
-            containerRegistry.RegisterSingleton<IBibleVersesDataService, BibleVersesDataService>();
+            containerRegistry.Register<IBibleVersesDataService, BibleVersesDataService>();
         }
     }
 

@@ -10,6 +10,10 @@ using Xamarin.Forms.Xaml;
 using Prism.Autofac;
 using Xamarin.Essentials;
 using Plugin.Iconize;
+using System;
+using Autofac;
+using System.Threading.Tasks;
+using Prism.Modularity;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HOK_App
@@ -29,7 +33,6 @@ namespace HOK_App
         {
             InitializeComponent();
             Barrel.ApplicationId = AppInfo.PackageName;
-            JobSchedulerService.ScheduleJobs();
             await NavigationService.NavigateAsync("MainPage");
         }
 
@@ -37,8 +40,9 @@ namespace HOK_App
         {
             base.Initialize();
             Iconize.With(new FontAwesomeProIconModule())
-                   .With(new  FontAwesomeBrandsIconModule());
+                   .With(new FontAwesomeBrandsIconModule());
         }
+
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
@@ -46,11 +50,12 @@ namespace HOK_App
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<AboutPage>();
             containerRegistry.RegisterForNavigation<FeedPage>();
-            
-            containerRegistry.RegisterSingleton<IErrorManagementService, ErrorManagementService>();
 
-            
             containerRegistry.Register<ILoadFeedCommand, LoadFeedCommand>();
+            containerRegistry.Register<ILoadBibleVersesCommand, LoadBibleVersesCommand>();
+
+            containerRegistry.RegisterSingleton<IErrorManagementService, ErrorManagementService>();
+            containerRegistry.Register<IBibleVersesDataService, BibleVersesDataService>();
         }
     }
 

@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using HOK_App.Droid.Services;
+using HOK_App.Services;
 using ImageCircle.Forms.Plugin.Droid;
 using Plugin.LocalNotifications;
 using Prism;
@@ -40,7 +42,7 @@ namespace HOK_App.Droid
     {
         public void RegisterTypes(IContainerRegistry container)
         {
-            // Register any platform specific implementations
+            container.Register<IFileService, FileService>();
         }
     }
 }

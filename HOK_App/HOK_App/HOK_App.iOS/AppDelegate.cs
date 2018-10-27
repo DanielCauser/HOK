@@ -1,5 +1,7 @@
 ﻿using System;
 using Foundation;
+using HOK_App.iOS.Services;
+using HOK_App.Services;
 using ImageCircle.Forms.Plugin.iOS;
 using Plugin.Iconize;
 using Prism;
@@ -69,7 +71,7 @@ namespace HOK_App.iOS
     {
         public void RegisterTypes(IContainerRegistry container)
         {
-
+            container.Register<IFileService, FileService>();
         }
     }
 }

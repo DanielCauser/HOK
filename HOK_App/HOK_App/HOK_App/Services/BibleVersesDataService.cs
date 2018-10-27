@@ -20,9 +20,10 @@ namespace HOK_App.Services
 
         public async Task<IList<BibleVerse>> GetBibleVerses()
         {
-            var randomList = await _conn.QueryAsync<BibleVerse>($"select * from {nameof(BibleVerse)}" +
-                                                          $" where {nameof(BibleVerse.Feast)} = {nameof(FeastEnum.None)}" +
-                                                          $" ORDER BY RANDOM() Limit 30");
+            var query = $"select * from {nameof(BibleVerse)}" +
+                $" where {nameof(BibleVerse.Feast)} = '{nameof(FeastEnum.None)}'" +
+                        $" ORDER BY RANDOM() Limit 30";
+            var randomList = await _conn.QueryAsync<BibleVerse>(query);
             return randomList;
         }
 

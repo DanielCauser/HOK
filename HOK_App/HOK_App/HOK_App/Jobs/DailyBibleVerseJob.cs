@@ -41,8 +41,6 @@ namespace HOK_App.Services
 
             }
 
-
-
             return Task.FromResult(0);
         }
     }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using HOK_App.Models;
 using SQLite;
+using System.Globalization;
 
 namespace HOK_App.Services
 {
@@ -19,8 +20,10 @@ namespace HOK_App.Services
 
         public async Task<IList<BibleVerse>> GetBibleVerses()
         {
-            var list = await _conn.QueryAsync<BibleVerse>($"select * from {nameof(BibleVerse)} LIMIT 30");
-            return list;
+            var randomList = await _conn.QueryAsync<BibleVerse>($"select * from {nameof(BibleVerse)}" +
+                                                          $" where {nameof(BibleVerse.Feast)} = {nameof(FeastEnum.None)}" +
+                                                          $" ORDER BY RANDOM() Limit 30");
+            return randomList;
         }
 
         private string EnsureDatabaseFile()

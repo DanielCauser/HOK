@@ -22,7 +22,6 @@ namespace HOK_App.Services
                     $"Daily bible verse {feast}".Trim(),
                     $"{list[i].Verse}",
                     i,
-                    //DateTime.Now.AddSeconds(10 * i));
                     TimeLeft(i));
             }
         }

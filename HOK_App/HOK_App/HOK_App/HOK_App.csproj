@@ -34,6 +34,7 @@
   <ItemGroup>
     <Compile Remove="Annotations.cs" />
     <Compile Remove="Templates\ContentPresenterTemplate.cs" />
+    <Compile Remove="Models\BibleVerseScheduled.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Templates\ContentPresenterTemplate.xaml" />

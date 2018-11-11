@@ -23,7 +23,6 @@ namespace HOK_App.Services
 
         public async Task<IList<BibleVerse>> GetBibleVerses()
         {
-            await UpdateAllHours();
             var list = await _conn.QueryAsync<BibleVerse>($"SELECT * FROM BibleVerse WHERE Date >= '{_todayin2018.Ticks}' AND Date < '{_todayin2018.AddDays(30).Ticks}'");
             return list;
         }

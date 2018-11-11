@@ -13,31 +13,21 @@ namespace HOK_App.ViewModels
     public class FeedPageViewModel : ViewModelBase
     {
         private ICommand _loadEventsCommand;
-        private ICommand _bibleVerseServiceCommand;
 
         public ICommand RefreshCommand => _loadEventsCommand;
-        public ICommand BibleVersesCommand => _loadEventsCommand;
 
         public FeedPageViewModel(INavigationService navigationService,
-                                 ILoadFeedCommand loadEventsCommand,
-                                 ILoadBibleVersesCommand bibleVerseService)
+                                 ILoadFeedCommand loadEventsCommand)
             : base(navigationService)
         {
             _loadEventsCommand = loadEventsCommand;
-            _bibleVerseServiceCommand = bibleVerseService;
         }
 
         public override void OnNavigatingTo(INavigationParameters parameters)
         {
-            _loadEventsCommand.Execute(null);
-        }
-
-        public override void OnNavigatedTo(INavigationParameters parameters)
-        {
-            _bibleVerseServiceCommand.Execute(null);
+            //_loadEventsCommand.Execute(null);
         }
 
         public override ICommand NavigateToWebUrlCommand => new DelegateCommand<RssFeedItem>(item => Device.OpenUri(new Uri(item.Link)));
-
     }
 }

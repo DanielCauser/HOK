@@ -14,6 +14,7 @@ using System;
 using Autofac;
 using System.Threading.Tasks;
 using Prism.Modularity;
+using HOK_App.ViewModels;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace HOK_App
@@ -50,9 +51,11 @@ namespace HOK_App
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<AboutPage>();
             containerRegistry.RegisterForNavigation<FeedPage>();
+            containerRegistry.RegisterForNavigation<VerseOfTheDayPage, VerseOfTheDayViewModel>();
 
             containerRegistry.Register<ILoadFeedCommand, LoadFeedCommand>();
             containerRegistry.Register<ILoadBibleVersesCommand, LoadBibleVersesCommand>();
+            containerRegistry.Register<IVerseOfTheDayCommand, VerseOfTheDayCommand>();
 
             containerRegistry.RegisterSingleton<IErrorManagementService, ErrorManagementService>();
             containerRegistry.Register<IBibleVersesDataService, BibleVersesDataService>();

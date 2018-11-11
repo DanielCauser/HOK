@@ -9,6 +9,7 @@ namespace HOK_App.Fonts
         private static IIcon _connect = new Icon(nameof(Connect), '\uf1e6');
         private static IIcon _about = new Icon(nameof(About), '\uf129');
         private static IIcon _email = new Icon(nameof(Email), '\uf2b6');
+        private static IIcon _quote = new Icon(nameof(Quote), '\uf518');
 
         public static IList<IIcon> Items { get; } = new List<IIcon>
         {
@@ -16,17 +17,20 @@ namespace HOK_App.Fonts
             _connect,
             _about,
             _email,
+            _quote,
         };
 
         public static string FeedKey => _feed.Key;
         public static string ConnectKey => _connect.Key;
         public static string AboutKey => _about.Key;
         public static string EmailKey => _email.Key;
+        public static string QuoteKey => _quote.Key;
 
         public static string Feed => _feed.Character.ToString();
         public static string Connect => _connect.Character.ToString();
         public static string About => _about.Character.ToString();
         public static string Email => _email.Character.ToString();
+        public static string Quote => _quote.Character.ToString();
     }
 
     public static class FontAwesomeBrands

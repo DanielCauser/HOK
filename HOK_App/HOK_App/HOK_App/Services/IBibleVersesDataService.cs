@@ -8,5 +8,6 @@ namespace HOK_App.Services
     public interface IBibleVersesDataService
     {
         Task<IList<BibleVerse>> GetBibleVerses();
+        Task<BibleVerse> GetTodayVerse();
     }
 }

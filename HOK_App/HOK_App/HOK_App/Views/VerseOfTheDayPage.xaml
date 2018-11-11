@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="HOK_App.Views.VerseOfTheDayPage"
+                xmlns:local="clr-namespace:HOK_App.Views"
+                Title="Verse of the Day">
+    <ScrollView>
+        <StackLayout Margin="10"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center">
+            
+            <Label Text="{Binding VerseOfTheDayCommand.VerseLocation}" 
+                   Margin="0,10,0,0"
+                   class="h1"
+                   HorizontalTextAlignment="Start"
+                   LineBreakMode="WordWrap"
+                   FontAttributes="Bold" />
+            
+            <Label Text="{Binding VerseOfTheDayCommand.Verse}" 
+                   class="h2"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Start"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   LineBreakMode="WordWrap" />
+        </StackLayout>
+    </ScrollView>
+</local:BasePage>

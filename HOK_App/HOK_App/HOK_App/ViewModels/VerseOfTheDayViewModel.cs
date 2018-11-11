@@ -8,7 +8,9 @@ namespace HOK_App.ViewModels
     public class VerseOfTheDayViewModel : ViewModelBase
     {
         private ICommand _bibleVerseServiceCommand;
-        private ICommand _verseOfTHeDayServiceCommand;
+        private ICommand _verseOfTheDayServiceCommand;
+
+        public ICommand VerseOfTheDayCommand => _verseOfTheDayServiceCommand;
 
         public VerseOfTheDayViewModel(INavigationService navigationService,
                                       ILoadBibleVersesCommand bibleVerseService,
@@ -16,7 +18,7 @@ namespace HOK_App.ViewModels
                                       : base(navigationService)
         {
             _bibleVerseServiceCommand = bibleVerseService;
-            _verseOfTHeDayServiceCommand = verseOfTHeDayService;
+            _verseOfTheDayServiceCommand = verseOfTHeDayService;
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
@@ -26,7 +28,7 @@ namespace HOK_App.ViewModels
 
         public override void OnNavigatingTo(INavigationParameters parameters)
         {
-            _verseOfTHeDayServiceCommand.Execute(null);
+            _verseOfTheDayServiceCommand.Execute(null);
         }
     }
 }

@@ -9,14 +9,14 @@
                      VerticalOptions="Center"
                      HorizontalOptions="Center">
             
-            <Label Text="{Binding VerseLocation}" 
+            <Label Text="{Binding VerseOfTheDayCommand.VerseLocation}" 
                    Margin="0,10,0,0"
                    class="h1"
-                   HorizontalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
                    LineBreakMode="WordWrap"
                    FontAttributes="Bold" />
             
-            <Label Text="{Binding Verse}" 
+            <Label Text="{Binding VerseOfTheDayCommand.Verse}" 
                    class="h2"
                    HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Start"

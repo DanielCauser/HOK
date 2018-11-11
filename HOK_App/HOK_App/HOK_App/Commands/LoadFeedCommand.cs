@@ -37,7 +37,8 @@ namespace HOK_App.Commands
         {
             try
             {
-                const string url = "http://www.haleokaula.org/feed/";
+                //const string url = "http://www.haleokaula.org/feed/";
+                const string url = "http://www.haleokaula.org/blog/pastors/audio-messages/feed/";
                 IsRefreshing = true;
 
                 string result;

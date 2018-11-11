@@ -23,7 +23,7 @@ namespace HOK_App.Services
 
         public async Task<IList<BibleVerse>> GetBibleVerses()
         {
-
+            await UpdateAllHours();
             var list = await _conn.QueryAsync<BibleVerse>($"SELECT * FROM BibleVerse WHERE Date >= '{_todayin2018.Ticks}' AND Date < '{_todayin2018.AddDays(30).Ticks}'");
             return list;
         }
@@ -32,6 +32,23 @@ namespace HOK_App.Services
         {
             var list = await _conn.QueryAsync<BibleVerse>($"SELECT * FROM BibleVerse WHERE Date = '{_todayin2018.Ticks}'");
             return list.First();
+        }
+
+        private async Task UpdateAllHours()
+        {
+            var query = _conn.Table<BibleVerse>();
+
+            var list = await query.ToListAsync();
+
+            var startDate = new DateTime(2018, 1, 1);
+            var dateToUpdate = new DateTime(2018, 1, 1);
+
+            for (int i = 0; i < list.Count(x => x.Feast == $"{nameof(FeastEnum.None)}"); i++)
+            {
+                list[i].Date = dateToUpdate;
+                await _conn.UpdateAsync(list[i]);
+                dateToUpdate = startDate.AddHours(i * 24);
+            }
         }
 
         private string EnsureDatabaseFile()

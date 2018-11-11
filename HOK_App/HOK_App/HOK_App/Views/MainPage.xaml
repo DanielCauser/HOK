@@ -10,6 +10,15 @@
             BarBackgroundColor="#3e6366"
             android:TabbedPage.ToolbarPlacement="Bottom">
     
+    <NavigationPage Title="Verse of the Day"
+                    Icon="{x:Static fonts:FontAwesomeRegular.QuoteKey}"
+                    BarBackgroundColor="#3e6366"
+                    BarTextColor="#d4d6c2">
+        <x:Arguments>
+            <local:VerseOfTheDayPage />
+        </x:Arguments>
+    </NavigationPage>
+    
     <NavigationPage Title="Feed"
                     Icon="{x:Static fonts:FontAwesomeRegular.FeedKey}"
                     BarBackgroundColor="#3e6366"

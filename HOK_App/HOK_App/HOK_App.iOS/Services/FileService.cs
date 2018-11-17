@@ -16,7 +16,7 @@ namespace HOK_App.iOS.Services
         public void MoveAsset(string fileName, string destinationPath)
         {
             var path = Path.Combine(NSBundle.MainBundle.ResourcePath, fileName);
-            File.Move(path, destinationPath);
+            File.Copy(path, destinationPath);
         }
     }
 }

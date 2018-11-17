@@ -39,4 +39,17 @@
   <ItemGroup>
     <EmbeddedResource Remove="Templates\ContentPresenterTemplate.xaml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\hok.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets\hok.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\hok.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

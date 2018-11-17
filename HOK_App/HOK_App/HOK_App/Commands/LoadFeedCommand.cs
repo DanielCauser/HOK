@@ -37,8 +37,6 @@ namespace HOK_App.Commands
         {
             try
             {
-                //const string url = "http://www.haleokaula.org/feed/";
-                const string url = "http://www.haleokaula.org/blog/pastors/audio-messages/feed/";
                 IsRefreshing = true;
 
                 string result;
@@ -53,14 +51,14 @@ namespace HOK_App.Commands
                     //#endif
 
                     {
-                        result = await client.GetStringAsync(url).ConfigureAwait(false);
+                        result = await client.GetStringAsync(Constants.HOKSiteFeed).ConfigureAwait(false);
                         events = await ParseFeed(result);
-                        Barrel.Current.Add(url, events, TimeSpan.FromDays(1));
+                        Barrel.Current.Add(Constants.HOKSiteFeed, events, TimeSpan.FromDays(1));
                     }
                 }
                 else
                 {
-                    events = Barrel.Current.Get<List<RssFeedItem>>(url);
+                    events = Barrel.Current.Get<List<RssFeedItem>>(Constants.HOKSiteFeed);
                 }
 
                 if (events != null && events.Any())

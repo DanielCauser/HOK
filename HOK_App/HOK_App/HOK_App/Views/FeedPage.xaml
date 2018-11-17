@@ -18,7 +18,7 @@
                   BackgroundColor="Transparent"
                   RowHeight="200"
                   SeparatorVisibility="None"
-                  CachingStrategy="RecycleElement">
+                  CachingStrategy="RetainElement">
             <ListView.ItemTemplate>
             <DataTemplate>
             <ViewCell>
@@ -32,10 +32,10 @@
                                                 Grid.RowSpan="2" 
                                                 HorizontalOptions="FillAndExpand"
                                                 VerticalOptions="FillAndExpand"
-                                                RetryCount="3"
+                                                RetryCount="1"
                                                 RetryDelay="2000"
                                                 IsOpaque="true"
-                                                CacheDuration="90"
+                                                CacheDuration="365"
                                                 FadeAnimationForCachedImages="true"
                                                 FadeAnimationEnabled="true"
                                                 ErrorPlaceholder = "hokone.jpg"

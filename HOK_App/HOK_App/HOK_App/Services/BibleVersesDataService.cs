@@ -13,17 +13,22 @@ namespace HOK_App.Services
     {
         private readonly DateTime _todayin2018;
         private readonly IFileService _fileService;
-        private SQLiteAsyncConnection _conn => new SQLiteAsyncConnection(EnsureDatabaseFile());
+        private SQLiteAsyncConnection _conn; 
 
         public BibleVersesDataService(IFileService fileService)
         {
             _fileService = fileService;
+            _conn = new SQLiteAsyncConnection(EnsureDatabaseFile());
             _todayin2018 = new DateTime(2018, DateTime.Now.Month, DateTime.Now.Day);
         }
 
         public async Task<IList<BibleVerse>> GetBibleVerses()
         {
-            var list = await _conn.QueryAsync<BibleVerse>($"SELECT * FROM BibleVerse WHERE Date >= '{_todayin2018.Ticks}' AND Date < '{_todayin2018.AddDays(30).Ticks}'");
+            DateTime filterDate = _todayin2018;
+            if (DateTime.Now.Hour > Constants.HourScheduledForPN)
+                filterDate = _todayin2018.AddDays(1);
+
+            var list = await _conn.QueryAsync<BibleVerse>($"SELECT * FROM BibleVerse WHERE Date >= '{filterDate.Ticks}' AND Date < '{filterDate.AddDays(30).Ticks}'");
             return list;
         }
 

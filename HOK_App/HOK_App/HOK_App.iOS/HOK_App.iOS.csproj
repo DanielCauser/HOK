@@ -172,7 +172,6 @@
     <BundleResource Include="Resources\logo80.png" />
     <BundleResource Include="..\HOK_App\Assets\hok.db">
       <Link>Resources\hok.db</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
   <ItemGroup>

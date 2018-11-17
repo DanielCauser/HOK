@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using HOK_App.Models;
 using Plugin.Jobs;
-using Plugin.LocalNotifications;
 
 namespace HOK_App.Services
 {
@@ -13,7 +11,7 @@ namespace HOK_App.Services
         private static DateTime TimeLeft(int repetition)
         {
             var now = DateTime.Now;
-            var tomorrow8am = now.AddDays(1).Date.AddHours(8);
+            var tomorrow8am = now.AddDays(1).Date.AddHours(Constants.HourScheduledForPN);
             var next = DateTime.Now.AddHours((tomorrow8am - now).TotalHours + repetition * 24);
 
             return next;

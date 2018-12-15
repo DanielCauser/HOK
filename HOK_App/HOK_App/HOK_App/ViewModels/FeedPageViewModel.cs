@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using HOK_App.Views;
 
 namespace HOK_App.ViewModels
 {
@@ -32,6 +33,18 @@ namespace HOK_App.ViewModels
             _loadEventsCommand.Execute(null);
         }
 
-        public override ICommand NavigateToWebUrlCommand => new DelegateCommand<RssFeedItem>(item => Device.OpenUri(new Uri(item.Link)));
+        public override ICommand NavigateToWebUrlCommand => new DelegateCommand<RssFeedItem>(FeedItemClicked);
+
+        private void FeedItemClicked(RssFeedItem obj)
+        {
+            if (string.IsNullOrEmpty(obj.PodCastLink))
+                Device.OpenUri(new Uri(obj.Link));
+            else
+            {
+                var parameter = new NavigationParameters();
+                parameter.Add(nameof(RssFeedItem.PodCastLink), obj.PodCastLink);
+                NavigationService.NavigateAsync(nameof(MediaPlayerPage), parameter);
+            }
+        }
     }
 }

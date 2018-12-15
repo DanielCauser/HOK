@@ -44,11 +44,11 @@ namespace HOK_App.Commands
 
                 if (Connectivity.NetworkAccess == NetworkAccess.Internet)
                 {
-                    //#if DEBUG
-                    //                    using (var client = new HttpClient(new HttpTracerHandler()))
-                    //#else
+                    #if DEBUG
+                    using (var client = new HttpClient(new HttpTracerHandler()))
+                    #else
                     using (var client = new HttpClient())
-                    //#endif
+                    #endif
 
                     {
                         result = await client.GetStringAsync(Constants.HOKSiteFeed).ConfigureAwait(false);

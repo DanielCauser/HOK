@@ -18,7 +18,7 @@
                   BackgroundColor="Transparent"
                   RowHeight="200"
                   SeparatorVisibility="None"
-                  CachingStrategy="RetainElement">
+                  CachingStrategy="RecycleElementAndDataTemplate">
             <ListView.ItemTemplate>
             <DataTemplate>
             <ViewCell>

@@ -52,6 +52,7 @@ namespace HOK_App
             containerRegistry.RegisterForNavigation<AboutPage>();
             containerRegistry.RegisterForNavigation<FeedPage>();
             containerRegistry.RegisterForNavigation<VerseOfTheDayPage, VerseOfTheDayViewModel>();
+            containerRegistry.RegisterForNavigation<MediaPlayerPage, MediaPlayerViewModel>();
 
             containerRegistry.Register<ILoadFeedCommand, LoadFeedCommand>();
             containerRegistry.Register<ILoadBibleVersesCommand, LoadBibleVersesCommand>();

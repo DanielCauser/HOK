@@ -72,6 +72,7 @@ namespace HOK_App.iOS
         public void RegisterTypes(IContainerRegistry container)
         {
             container.Register<IFileService, FileService>();
+            container.Register<IAudioService, AudioService>();
         }
     }
 }

@@ -87,6 +87,7 @@
     <Compile Include="Effects\DropShadowEffect.cs" />
     <Compile Include="Renderers\IconBottomTabbedPageRenderer.cs" />
     <Compile Include="Services\FileService.cs" />
+    <Compile Include="Services\AudioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

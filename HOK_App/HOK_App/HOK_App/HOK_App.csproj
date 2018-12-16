@@ -20,7 +20,6 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
     <PackageReference Include="Plugin.Jobs.Autofac" Version="1.2.0" />
     <PackageReference Include="HttpTracer" Version="1.0.2" />
-    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.4.5" />
   </ItemGroup>
 
   <ItemGroup>

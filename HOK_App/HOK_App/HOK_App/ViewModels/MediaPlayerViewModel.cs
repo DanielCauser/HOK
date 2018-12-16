@@ -7,6 +7,8 @@ using Plugin.MediaManager;
 using Plugin.MediaManager.Abstractions;
 using Plugin.MediaManager.Abstractions.Enums;
 using Xamarin.Forms;
+using Plugin.MediaManager.Abstractions.Implementations;
+using HOK_App.Services;
 
 namespace HOK_App.ViewModels
 {
@@ -14,27 +16,19 @@ namespace HOK_App.ViewModels
     {
         public RssFeedItem DataObject { get; set; }
 
-        private string _duration;
+        private readonly IAudioService _audioService;
+
+        string _duration;
         private double _progress;
         public double Progress { get => _progress; set => SetProperty(ref _progress, value); }
         public string Duration { get => _duration; set => SetProperty(ref _duration, value); }
 
-        public MediaPlayerViewModel(INavigationService navigationService)
+        public MediaPlayerViewModel(INavigationService navigationService,
+                                    IAudioService audioService)
             : base(navigationService)
         {
-            PlayerController = CrossMediaManager.Current.PlaybackController;
-
-            CrossMediaManager.Current.PlayingChanged += (sender, e) =>
-            {
-                //Device.BeginInvokeOnMainThread(() =>
-                //{
-                Progress = e.Progress;
-                Duration = "" + e.Duration.TotalSeconds + " seconds";
-                //});
-            };
+            _audioService = audioService;
         }
-
-        public readonly IPlaybackController PlayerController;
 
         public ICommand PlayCommand => new DelegateCommand(PlayAudioCommand);
 
@@ -42,19 +36,33 @@ namespace HOK_App.ViewModels
 
         private void PlayAudioCommand()
         {
-            PlayerController.Play();
+            _audioService.Play(DataObject.PodCastLink, HandleAction);
+        }
+
+        void HandleAction(string arg1, double arg2)
+        {
         }
 
         private void PauseAudioCommand()
         {
-            PlayerController.Pause();
+            _audioService.Pause();
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             DataObject = parameters.GetValue<RssFeedItem>(nameof(RssFeedItem));
-            CrossMediaManager.Current.Play(DataObject.PodCastLink);
-            PlayerController.Pause();
+            //MediaFile file = new MediaFile(DataObject.PodCastLink, MediaFileType.Audio);
+
+            //CrossMediaManager.Current.AudioPlayer.PlayingChanged += (sender, e) =>
+            //{
+            //    //Device.BeginInvokeOnMainThread(() =>
+            //    //{
+            //    //Progress = e.Progress;
+            //    //Duration = "" + e.Duration.TotalSeconds + " seconds";
+            //    //});
+            //};
+
+            //CrossMediaManager.Current.AudioPlayer.Play(file);
         }
     }
 }

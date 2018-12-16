@@ -43,6 +43,7 @@ namespace HOK_App.Droid
         public void RegisterTypes(IContainerRegistry container)
         {
             container.Register<IFileService, FileService>();
+            container.Register<IAudioService, AudioService>();
         }
     }
 }

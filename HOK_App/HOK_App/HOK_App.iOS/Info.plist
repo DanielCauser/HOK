@@ -43,6 +43,7 @@
 	<string>Maui Church</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>fetch</string>
 	</array>
 	<key>NSAppTransportSecurity</key>

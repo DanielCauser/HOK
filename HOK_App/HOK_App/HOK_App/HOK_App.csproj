@@ -31,6 +31,7 @@
     <Folder Include="Fonts\" />
     <Folder Include="Assets\" />
     <Folder Include="Jobs\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Annotations.cs" />

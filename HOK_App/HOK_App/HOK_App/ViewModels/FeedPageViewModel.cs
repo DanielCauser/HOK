@@ -42,7 +42,7 @@ namespace HOK_App.ViewModels
             else
             {
                 var parameter = new NavigationParameters();
-                parameter.Add(nameof(RssFeedItem.PodCastLink), obj.PodCastLink);
+                parameter.Add(nameof(RssFeedItem), obj);
                 NavigationService.NavigateAsync(nameof(MediaPlayerPage), parameter);
             }
         }

@@ -2,18 +2,50 @@
 <local:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 x:Class="HOK_App.Views.MediaPlayerPage"
+                xmlns:converter="clr-namespace:HOK_App.Converters"
                 xmlns:local="clr-namespace:HOK_App.Views"
                 xmlns:forms="clr-namespace:Plugin.MediaManager.Forms;assembly=Plugin.MediaManager.Forms">
-    <StackLayout Orientation="Horizontal" 
-                 HorizontalOptions="CenterAndExpand" 
-                 Spacing="10" VerticalOptions="End">
-        
-      <Button  Text="Play"
-               HorizontalOptions="Center"
-               Command="{Binding PlayCommand}"/>
-        
-      <Button  Text="Pause"
-               HorizontalOptions="Center"/>
-    </StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ToReverseBooleanConverter x:Key="ToReverseBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <Grid HorizontalOptions="FillAndExpand" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0"  
+                     Orientation="Vertical"
+                     VerticalOptions="End">
+            <Label Text="Duration: "/>
+            <Label Text="{Binding Duration}"/>
+            <ProgressBar Progress="{Binding Progress}"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="End" /> 
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="CenterAndExpand" 
+                     Spacing="10" 
+                     VerticalOptions="Center"
+                     Grid.Row="1">
+            
+          <Button  Text="Play"
+                   FontSize="Large"
+                   HeightRequest="50"
+                   IsVisible="{Binding IsPlaying, Converter={StaticResource ToReverseBooleanConverter}}"
+                   HorizontalOptions="Center"
+                   Command="{Binding PlayCommand}"/>
+            
+          <Button  Text="Pause"
+                   FontSize="Large"
+                   HeightRequest="50"
+                   IsVisible="{Binding IsPlaying}"
+                   HorizontalOptions="Center"
+                   Command="{Binding PauseCommand}"/>
+        </StackLayout>
+    </Grid>
 </local:BasePage>
 
